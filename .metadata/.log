@@ -649,3 +649,841 @@ java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:38.673
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.MDKhmlYt
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:38.673
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.MDKhmlYt
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:38.673
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:38.673
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.MDKhmlYt => OK
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 11:26:39.891
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: WorkbenchContext
+!SUBENTRY 1 org.eclipse.ui 4 4 2022-04-26 11:26:39.891
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: WorkbenchContext
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} vs {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} in: WorkbenchContext
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:145)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:271)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:237)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:103)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.handlerChanged(E4HandlerProxy.java:114)
+	at org.eclipse.core.commands.AbstractHandler.fireHandlerChanged(AbstractHandler.java:77)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.lambda$0(HandlerProxy.java:248)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:116)
+	at org.eclipse.ui.internal.services.EvaluationService.invalidate(EvaluationService.java:248)
+	at org.eclipse.ui.internal.services.EvaluationService.dispose(EvaluationService.java:193)
+	at org.eclipse.ui.internal.services.ServiceLocator$3.run(ServiceLocator.java:182)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.services.ServiceLocator.disposeServices(ServiceLocator.java:179)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:152)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:2965)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1124)
+	at org.eclipse.ui.internal.Workbench.lambda$4(Workbench.java:1392)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1392)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1368)
+	at org.eclipse.ui.internal.handlers.QuitHandler.execute(QuitHandler.java:46)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:319)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:253)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:389)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:142)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SESSION 2022-04-26 11:26:44.703 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=11.0.9
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 11:26:54.490
+!MESSAGE キーバインドの競合が発生しました。 通常のアクセラレーター操作を妨げる可能性があります。
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 11:26:54.490
+!MESSAGE CTRL+SHIFT+T の競合が発生しました:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,型を開く,
+		型を Java エディターで開きます,
+		Category(org.eclipse.ui.category.navigate,ナビゲート,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7843b65e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,ワークスペース内のシンボルにジャンプ,
+		,
+		Category(org.eclipse.lsp4e.category,言語サーバー,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d6f951a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 11:26:56.458
+!MESSAGE プラグイン 'org.eclipse.egit.ui' は無効なメニュー拡張をコントリビュートしました (パス: 'org.eclipse.search.menu' が無効です): org.eclipse.egit.ui.actions.OpenCommitSearchPage
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:59.504
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:59.504
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@257f8040[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=976)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:59.504
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:26:59.598
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 11:27:03.628
+!MESSAGE キーバインドの競合が発生しました。 通常のアクセラレーター操作を妨げる可能性があります。
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 11:27:03.628
+!MESSAGE CTRL+- の競合が発生しました:
+Binding(CTRL+-,
+	ParameterizedCommand(Command(junit.extensions.eclipse.quick.pde.command.PDEJUnitRunAction,JUnit Plug-in テスト,
+		PDE JUnitでテストを実行します．,
+		Category(junit.extensions.eclipse.quick.command.category,Quick JUnit,Quick JUnitアクション,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f7e5f33,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+-,
+	ParameterizedCommand(Command(org.eclipse.gef.zoom_out,ズームアウト,
+		ズームアウト,
+		Category(org.eclipse.gef.category.view,ビュー,ビュー,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a83736a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+-,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.zoomOut,ズームアウト,
+		テキストのズーム・アウト - テキスト・エディターのデフォルト・フォント・サイズを小さくします,
+		Category(org.eclipse.ui.category.textEditor,テキスト編集,テキスト編集コマンド,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3c06d119,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:05.440
+!MESSAGE Boot LS startup time from start to initialized: 5873ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sEKsOxjFisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sEKsOxjF => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.284
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.300
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.300
+!MESSAGE buffering callback sts4.classpath.sEKsOxjF day1 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.300
+!MESSAGE executing callback sts4.classpath.sEKsOxjF 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:27:06.409
+!MESSAGE executing callback sts4.classpath.sEKsOxjF SUCCESS [終了しました]
+
+!ENTRY org.eclipse.ui 2 2 2022-04-26 11:28:06.506
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 11:28:06.841
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:org.eclipse.jdt.ui.PackageExplorer
+!SUBENTRY 1 org.eclipse.ui 4 4 2022-04-26 11:28:06.841
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:org.eclipse.jdt.ui.PackageExplorer
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} vs {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} in: popup:org.eclipse.jdt.ui.PackageExplorer
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:145)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:271)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:237)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:103)
+	at org.eclipse.ui.internal.WorkbenchHandlerServiceHandler.updateElement(WorkbenchHandlerServiceHandler.java:43)
+	at org.eclipse.ui.internal.commands.CommandService.registerElement(CommandService.java:313)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElement(SlaveCommandService.java:239)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForCommand(SlaveCommandService.java:231)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForUpdate(SlaveCommandService.java:285)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.postMenuFill(HandledContributionItem.java:198)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.fill(AbstractContributionItem.java:266)
+	at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:729)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:806)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.scheduleManagerUpdate(MenuManagerRenderer.java:1226)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContents(MenuManagerRenderer.java:654)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.subscribeTopicChildAdded(MenuManagerRenderer.java:325)
+	at jdk.internal.reflect.GeneratedMethodAccessor20.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:219)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:64)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:356)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:340)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributionRecord.mergeIntoModel(ContributionRecord.java:253)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processAddition(MenuManagerRenderer.java:550)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.generateContributions(MenuManagerRenderer.java:530)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContributions(MenuManagerRenderer.java:498)
+	at org.eclipse.ui.internal.PopupMenuExtender.addMenuContributions(PopupMenuExtender.java:380)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:355)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:463)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5159)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4791)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2142)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4067)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3620)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:23.906
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sEKsOxjF
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:23.907
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sEKsOxjF
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:23.908
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:23.909
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sEKsOxjF => OK
+!SESSION 2022-04-26 11:47:33.324 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=11.0.9
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 11:47:41.192
+!MESSAGE キーバインドの競合が発生しました。 通常のアクセラレーター操作を妨げる可能性があります。
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 11:47:41.192
+!MESSAGE CTRL+SHIFT+T の競合が発生しました:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,型を開く,
+		型を Java エディターで開きます,
+		Category(org.eclipse.ui.category.navigate,ナビゲート,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78c9c38a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,ワークスペース内のシンボルにジャンプ,
+		,
+		Category(org.eclipse.lsp4e.category,言語サーバー,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8a0a1d1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:48.550
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:48.550
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@350a7383[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=976)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:48.550
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:48.597
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.jface 2 0 2022-04-26 11:47:52.471
+!MESSAGE キーバインドの競合が発生しました。 通常のアクセラレーター操作を妨げる可能性があります。
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-26 11:47:52.471
+!MESSAGE CTRL+- の競合が発生しました:
+Binding(CTRL+-,
+	ParameterizedCommand(Command(junit.extensions.eclipse.quick.pde.command.PDEJUnitRunAction,JUnit Plug-in テスト,
+		PDE JUnitでテストを実行します．,
+		Category(junit.extensions.eclipse.quick.command.category,Quick JUnit,Quick JUnitアクション,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@ace257b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+-,
+	ParameterizedCommand(Command(org.eclipse.gef.zoom_out,ズームアウト,
+		ズームアウト,
+		Category(org.eclipse.gef.category.view,ビュー,ビュー,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2295b060,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+-,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.zoomOut,ズームアウト,
+		テキストのズーム・アウト - テキスト・エディターのデフォルト・フォント・サイズを小さくします,
+		Category(org.eclipse.ui.category.textEditor,テキスト編集,テキスト編集コマンド,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36813933,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 2 0 2022-04-26 11:47:53.018
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:54.517
+!MESSAGE Boot LS startup time from start to initialized: 5936ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.rZbLDzhRisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.220
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.rZbLDzhR => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.236
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.236
+!MESSAGE buffering callback sts4.classpath.rZbLDzhR day1 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.236
+!MESSAGE executing callback sts4.classpath.rZbLDzhR 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:47:55.330
+!MESSAGE executing callback sts4.classpath.rZbLDzhR SUCCESS [終了しました]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.840
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.rZbLDzhR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.842
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.rZbLDzhR
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.842
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.843
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.843
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@350a7383[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=976)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.843
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.rZbLDzhR => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:53.844
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:58.942
+!MESSAGE Boot LS startup time from start to initialized: 5096ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.120
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vsXBSwknisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.122
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.123
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.123
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.124
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.124
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vsXBSwkn => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.125
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.126
+!MESSAGE buffering callback sts4.classpath.vsXBSwkn day1 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.127
+!MESSAGE executing callback sts4.classpath.vsXBSwkn 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 11:53:59.210
+!MESSAGE executing callback sts4.classpath.vsXBSwkn SUCCESS [終了しました]
+
+!ENTRY org.eclipse.ui 2 2 2022-04-26 11:54:16.131
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 11:54:16.452
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:org.eclipse.jdt.ui.PackageExplorer
+!SUBENTRY 1 org.eclipse.ui 4 4 2022-04-26 11:54:16.452
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:org.eclipse.jdt.ui.PackageExplorer
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} vs {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} in: popup:org.eclipse.jdt.ui.PackageExplorer
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:145)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:271)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:237)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:103)
+	at org.eclipse.ui.internal.WorkbenchHandlerServiceHandler.updateElement(WorkbenchHandlerServiceHandler.java:43)
+	at org.eclipse.ui.internal.commands.CommandService.registerElement(CommandService.java:313)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElement(SlaveCommandService.java:239)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForCommand(SlaveCommandService.java:231)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForUpdate(SlaveCommandService.java:285)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.postMenuFill(HandledContributionItem.java:198)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.fill(AbstractContributionItem.java:266)
+	at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:729)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:806)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.scheduleManagerUpdate(MenuManagerRenderer.java:1226)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContents(MenuManagerRenderer.java:654)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.subscribeTopicChildAdded(MenuManagerRenderer.java:325)
+	at jdk.internal.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:219)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:64)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:356)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:340)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributionRecord.mergeIntoModel(ContributionRecord.java:253)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processAddition(MenuManagerRenderer.java:550)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.generateContributions(MenuManagerRenderer.java:530)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContributions(MenuManagerRenderer.java:498)
+	at org.eclipse.ui.internal.PopupMenuExtender.addMenuContributions(PopupMenuExtender.java:380)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:355)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:463)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5159)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4791)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2142)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4067)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3620)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:35.672
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vsXBSwkn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:35.672
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.vsXBSwkn
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:35.688
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:35.688
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vsXBSwkn => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:40.880
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:40.880
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@350a7383[org.springframework.tooling.boot.ls:1.24.0.202012131915(id=976)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:40.880
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.566
+!MESSAGE Boot LS startup time from start to initialized: 2686ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DmOskSLJisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DmOskSLJ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE buffering callback sts4.classpath.DmOskSLJ day1 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.675
+!MESSAGE executing callback sts4.classpath.DmOskSLJ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:11:43.722
+!MESSAGE executing callback sts4.classpath.DmOskSLJ SUCCESS [終了しました]
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 14:15:42.129
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:#CompilationUnitEditorContext
+!SUBENTRY 1 org.eclipse.ui 4 4 2022-04-26 14:15:42.129
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:#CompilationUnitEditorContext
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} vs {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} in: popup:#CompilationUnitEditorContext
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:145)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:271)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:237)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:103)
+	at org.eclipse.ui.internal.WorkbenchHandlerServiceHandler.updateElement(WorkbenchHandlerServiceHandler.java:43)
+	at org.eclipse.ui.internal.commands.CommandService.registerElement(CommandService.java:313)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElement(SlaveCommandService.java:239)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForCommand(SlaveCommandService.java:231)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForUpdate(SlaveCommandService.java:285)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.postMenuFill(HandledContributionItem.java:198)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.fill(AbstractContributionItem.java:266)
+	at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:729)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:806)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.scheduleManagerUpdate(MenuManagerRenderer.java:1226)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContents(MenuManagerRenderer.java:654)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.subscribeTopicChildAdded(MenuManagerRenderer.java:325)
+	at jdk.internal.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:219)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:64)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:356)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:340)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributionRecord.mergeIntoModel(ContributionRecord.java:253)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processAddition(MenuManagerRenderer.java:550)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.generateContributions(MenuManagerRenderer.java:530)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContributions(MenuManagerRenderer.java:498)
+	at org.eclipse.ui.internal.PopupMenuExtender.addMenuContributions(PopupMenuExtender.java:380)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:355)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:463)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5159)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4791)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2142)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4067)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3620)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.ui 4 4 2022-04-26 14:15:45.666
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:#CompilationUnitEditorContext
+!SUBENTRY 1 org.eclipse.ui 4 4 2022-04-26 14:15:45.666
+!MESSAGE ハンドラーの競合 org.springframework.ide.eclipse.xterm.open: {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} vs {org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler} in: popup:#CompilationUnitEditorContext
+!STACK 0
+java.lang.IllegalStateException: Conflicting handlers: {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} vs {[org.springframework.ide.eclipse.xterm.views.OpenTerminalHandler,  for 'org.springframework.ide.eclipse.xterm.open',  in WorkbenchContext, active=true, sourcePriority=0, participating=true]} in: popup:#CompilationUnitEditorContext
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:145)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:70)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:271)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:282)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:237)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:103)
+	at org.eclipse.ui.internal.WorkbenchHandlerServiceHandler.updateElement(WorkbenchHandlerServiceHandler.java:43)
+	at org.eclipse.ui.internal.commands.CommandService.registerElement(CommandService.java:313)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElement(SlaveCommandService.java:239)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForCommand(SlaveCommandService.java:231)
+	at org.eclipse.ui.internal.commands.SlaveCommandService.registerElementForUpdate(SlaveCommandService.java:285)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.postMenuFill(HandledContributionItem.java:198)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.fill(AbstractContributionItem.java:266)
+	at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:729)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:806)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.scheduleManagerUpdate(MenuManagerRenderer.java:1226)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContents(MenuManagerRenderer.java:654)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.subscribeTopicChildAdded(MenuManagerRenderer.java:325)
+	at jdk.internal.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:219)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:64)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:356)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:340)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributionRecord.mergeIntoModel(ContributionRecord.java:253)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processAddition(MenuManagerRenderer.java:550)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.generateContributions(MenuManagerRenderer.java:530)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerRenderer.processContributions(MenuManagerRenderer.java:498)
+	at org.eclipse.ui.internal.PopupMenuExtender.addMenuContributions(PopupMenuExtender.java:380)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:355)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:468)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:463)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:495)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:259)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1042)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:5159)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4791)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2142)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4067)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3620)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:29:16.136
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.DmOskSLJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:29:16.136
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.DmOskSLJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:29:16.136
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-26 14:29:16.136
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.DmOskSLJ => OK

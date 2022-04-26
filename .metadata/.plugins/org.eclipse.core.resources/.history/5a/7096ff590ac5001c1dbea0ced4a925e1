@@ -1,0 +1,15 @@
+package Issue13;
+
+public class Wizard {
+	private int hp;
+	private int mp;
+	private String name;
+	Wand wand;
+	public int getHp() {
+		return this.hp;
+	}
+	public void setHp() {
+		this.hp=hp;
+	}
+	public
+}
