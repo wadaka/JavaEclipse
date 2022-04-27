@@ -39,5 +39,6 @@ public class TimeLesson {
 		c.setTime(now);
 		int y = c.get(Calendar.YEAR);
 		System.out.println("今年は"+y+"年です");
+		System.out.println("Hello");
 	}
 }
