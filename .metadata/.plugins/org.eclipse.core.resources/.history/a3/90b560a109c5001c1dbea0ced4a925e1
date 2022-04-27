@@ -1,6 +1,0 @@
-package Issue13;
-
-public class Wizard {
-	private int hp;
-	private int hp;
-}
