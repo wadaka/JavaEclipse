@@ -1,10 +1,12 @@
 package TimeLesson;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class TimeLesson {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		long start = System.currentTimeMillis();
 		String str = "Java";
 		for(int i=0;i<10000;i++) {
@@ -40,5 +42,15 @@ public class TimeLesson {
 		int y = c.get(Calendar.YEAR);
 		System.out.println("今年は"+y+"年です");
 		System.out.println("Hello");
+
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date day = sdf.parse("2020/09/22 01:23:45");
+		System.out.println(day);
+		Date nowly = new Date();
+		String sly = sdf.format(nowly);
+		System.out.println("現在の時刻は"+sly+"です。");
+		SimpleDateFormat sdf_nonY = new SimpleDateFormat("dd/MM ss:mm:HH");
+		String slys = sdf_nonY.format(nowly);
+		System.out.println("現在の時刻は"+slys+"どぅえ～す！");
 	}
 }
